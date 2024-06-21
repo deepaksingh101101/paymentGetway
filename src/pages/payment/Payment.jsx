@@ -11,7 +11,18 @@ import paytm from '../../assets/paytm.svg'
 import secure from '../../assets/secure.svg'
 import center from '../../assets/center.svg'
 import tag from '../../assets/tag.svg'
+import Upi from '../../components/upi/Upi'
+import { useEffect, useState } from 'react'
 export default function Payment() {
+    const [isMobileView, setIsMobileView] = useState(window.innerWidth < 660);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobileView(window.innerWidth < 660);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
   return (
     <>
     <Navbar/>
@@ -23,84 +34,140 @@ export default function Payment() {
         <div className="row mt-4 ">
            <div className="col-lg-8 p-3 leftDiv px-0" style={{height:"70vh"}}>
            <div className="d-flex align-items-start">
-  <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          { !isMobileView && <>
+    <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <div style={{width:"280px",height:"120px"}} className="nav-link active d-flex  " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
 
-        <img style={{height:"",width:"25px"}} className='me-3 mb-5' src={rupay} alt='R'/>
-        <div className="d-flex ms-2 flex-column">
-            <h6 className='mb-1 mt-3 blackText ' >UPI Options</h6>
-            <p className='mb-0 pb-2' >Pay Directly from Your Bank Account</p>
-        </div>
-        
+    <img style={{height:"",width:"25px"}} className='me-3 mb-5' src={rupay} alt='R'/>
+    <div className="d-flex ms-2 flex-column">
+        <h6 className='mb-1 mt-3 blackText ' >UPI Options</h6>
+        <p className='mb-0 pb-2' >Pay Directly from Your Bank Account</p>
+    </div>
+
     </div>
     <div style={{width:"280px",height:"120px"}} className="nav-link d-flex" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
     <img style={{height:"",width:"25px"}} className='me-3 mb-5' src={debit} alt='R'/>
-        <div className="d-flex ms-2 flex-column">
-            <h6 className='mb-1 mt-3 blackText' >Debit/Credit Card</h6>
-            <p className='mb-0 pb-2' >Visa, MasterCard, AMEX Rupay and Dinnerclub</p>
-        </div>
-       </div>
+    <div className="d-flex ms-2 flex-column">
+        <h6 className='mb-1 mt-3 blackText' >Debit/Credit Card</h6>
+        <p className='mb-0 pb-2' >Visa, MasterCard, AMEX Rupay and Dinnerclub</p>
+    </div>
+    </div>
     <div style={{width:"280px",height:"120px"}} className="nav-link d-flex" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
     <img style={{height:"",width:"25px"}} className='me-3 mb-5' src={bank} alt='R'/>
-        <div className="d-flex ms-2 flex-column">
-            <h6 className='mb-1 mt-3 blackText' >Net Banking</h6>
-            <p className='mb-0 pb-2' >All Major Bank Available</p>
-        </div>
-        </div>
-  </div>
-  <div className="tab-content" id="v-pills-tabContent">
-    <div className="tab-pane pe-3 fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-       <h5>Pay using UPI</h5>
-
-        <div className="d-flex mt-3 align-items-center justify-content-between">
-            <div className="imgOuter mx-2">
-            <img src={gpay} alt='Gpay'/>
-            </div>
-            <div className="imgOuter mx-2">
-            <img src={bhim} alt='bhim'/>
-            </div>
-            <div className="imgOuter mx-2">
-            <img src={phonepe} alt='phonepe'/>
-            </div>
-            <div className="imgOuter mx-2">
-            <img src={paytm} alt='paytm'/>
-            </div>
-        </div>
-
-        <div className="mt-4 px-3s">
-  <input type="text" className=" shadow-none w-100 form-control upiInput " id="exampleFormControlInput1" placeholder="Enter UPI Id"/>
-</div>
-
-
-<div className="d-flex mt-4 flex-column">
-    <div className="d-flex py-1 align-items-center">
-        <button  className='border-0 number' >1</button>
-        <p className='mb-0 ms-2 fw-semibold' >Enter your UPI ID and click on Pay Now.</p>
+    <div className="d-flex ms-2 flex-column">
+        <h6 className='mb-1 mt-3 blackText' >Net Banking</h6>
+        <p className='mb-0 pb-2' >All Major Bank Available</p>
     </div>
-    <div className="d-flex py-2 align-items-center">
-        <button  className='border-0 number' >2</button>
-        <p className='mb-0 ms-2 fw-semibold' >You will receive a  request from Payment Gateway in your UPI App.</p>
     </div>
-    <div className="d-flex py-1 align-items-center">
-        <button  className='border-0 number' >3</button>
-        <p className='mb-0 ms-2 fw-semibold' >Login to UPI app by entering your mpin & authorize payment.</p>
     </div>
-</div>
 
-
-<div className="d-flex mt-5 align-items-center justify-content-center">
-    <img src={secure} alt=''/>
-    <p style={{fontSize:"20px"}} className=' grey mb-0 fw-semibold ms-2' >Safe & Secure Payment</p>
-</div>
-
-
-<button className='paymentBtn fw-semibold mt-4  ' >Proceed To Payment</button>
-    </div>
+    <div className="tab-content" id="v-pills-tabContent">
+    <Upi/>
     <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
     <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+    </div>
+    </>}
+
+
+
+
+
+
+
+   {isMobileView && <div className="accordion mobile w-100" id="accordionExample">
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="headingOne">
+      <button className="p-0 shadow-none nav flex-column accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div style={{width:"280px",height:""}} className="nav-link active d-flex  " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+
+    <img style={{height:"",width:"25px"}} className='me-1 mb-0' src={rupay} alt='R'/>
+    <div className="d-flex ms-2 flex-column">
+        <h6 className='mb-1 mt-3 blackText ' >UPI Options</h6>
+        <p className='mb-0 pb-2' >Pay Directly from Your Bank Account</p>
+    </div>
+
+    </div>
+      </button>
+    </h2>
+    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+<Upi/>
+      </div>
+    </div>
   </div>
+ 
+
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="headingOne2">
+      <button className="p-0 shadow-none nav flex-column accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+        <div style={{width:"280px",height:""}} className="nav-link active d-flex  " id="v-pills-home-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-home2" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+
+    <img style={{height:"",width:"25px"}} className='me-1 mb-0' src={debit} alt='R'/>
+    <div className="d-flex ms-2 flex-column">
+        <h6 className='mb-1 mt-3 blackText ' >Debit/Credit Card</h6>
+        <p className='mb-0 pb-2' >Visa, MasterCard, AMEX, Rupay and Dinnerclub</p>
+    </div>
+
+    </div>
+      </button>
+    </h2>
+    <div id="collapseOne2" className="accordion-collapse collapse show" aria-labelledby="headingOne2" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+{/* <Upi/> */}
+<h2>Hello</h2>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div className="accordion-item">
+    <h2 className="accordion-header" id="headingOne3">
+      <button className="p-0 shadow-none nav flex-column accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
+        <div style={{width:"280px",height:""}} className="nav-link active d-flex  " id="v-pills-home-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-home2" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+
+    <img style={{height:"",width:"25px"}} className='me-1 mb-0' src={bank} alt='R'/>
+    <div className="d-flex ms-2 flex-column">
+        <h6 className='mb-1 mt-3 blackText ' >NetBanking</h6>
+        <p className='mb-0 pb-2' >All Major banks Available</p>
+    </div>
+
+    </div>
+      </button>
+    </h2>
+    <div id="collapseOne3" className="accordion-collapse collapse show" aria-labelledby="headingOne3" data-bs-parent="#accordionExample">
+      <div className="accordion-body">
+{/* <Upi/> */}
+<h2>Hello, Bro</h2>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
            </div>
+
+
            <div className="col-lg-4 rightDiv">
             <div  className="rightInner p-2">
 

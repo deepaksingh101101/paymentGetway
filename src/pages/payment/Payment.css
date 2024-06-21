@@ -11,6 +11,11 @@
 }
 
 
+#body .mobile .accordion-button::after {
+
+display: none;
+}
+
 #body .payment p{
 font-size: 14px;
 }
