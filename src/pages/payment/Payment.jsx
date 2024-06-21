@@ -32,10 +32,10 @@ export default function Payment() {
         <h3 className='mb-0 textSize' >Select Payment Method</h3>
         </div>
         <div className="row mt-4 ">
-           <div className="col-lg-8 p-3 leftDiv px-0" style={{height:"70vh"}}>
+           <div className="col-lg-8 p-0 leftDiv px-0" style={{height:"70vh"}}>
            <div className="d-flex align-items-start">
           { !isMobileView && <>
-    <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <div className="nav flex-column nav-pills rightBorder me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <div style={{width:"280px",height:"120px"}} className="nav-link active d-flex  " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
 
     <img style={{height:"",width:"25px"}} className='me-3 mb-5' src={rupay} alt='R'/>
@@ -100,7 +100,7 @@ export default function Payment() {
   <div className="accordion-item">
     <h2 className="accordion-header" id="headingOne2">
       <button className="p-0 shadow-none nav flex-column accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
-        <div style={{width:"280px",height:""}} className="nav-link active d-flex  " id="v-pills-home-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-home2" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+        <div style={{width:"280px",height:""}} className="nav-link  d-flex  " id="v-pills-home-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-home2" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
 
     <img style={{height:"",width:"25px"}} className='me-1 mb-0' src={debit} alt='R'/>
     <div className="d-flex ms-2 flex-column">
@@ -125,7 +125,7 @@ export default function Payment() {
   <div className="accordion-item">
     <h2 className="accordion-header" id="headingOne3">
       <button className="p-0 shadow-none nav flex-column accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="true" aria-controls="collapseOne3">
-        <div style={{width:"280px",height:""}} className="nav-link active d-flex  " id="v-pills-home-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-home2" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+        <div style={{width:"280px",height:""}} className="nav-link  d-flex  " id="v-pills-home-tab2" data-bs-toggle="pill" data-bs-target="#v-pills-home2" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
 
     <img style={{height:"",width:"25px"}} className='me-1 mb-0' src={bank} alt='R'/>
     <div className="d-flex ms-2 flex-column">
