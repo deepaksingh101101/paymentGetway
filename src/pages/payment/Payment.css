@@ -1,0 +1,200 @@
+#body .payment .active{
+    background: white ;
+    color: black ;
+}
+
+#body .payment h5, h6,p{
+    color: black ;
+}
+#body .blackText{
+    color: black ;
+}
+
+
+#body .payment p{
+font-size: 14px;
+}
+
+#body .leftDiv .nav{
+    background: #F4F4F4;
+}
+#body .leftDiv {
+    border-radius: 6px;
+background: #FFF;
+box-shadow: 0px 1px 17.9px 0px rgba(0, 0, 0, 0.10);
+}
+
+#body .nav-pills .nav-link{
+    border-radius: 0px  !important;
+}
+
+#body .imgOuter img{
+height: 42.841px;
+padding: 8.879px 9.513px;
+}
+#body .imgOuter {
+    border-radius: 5px;
+    border: 1.5px solid #D9D9D9;
+}
+
+
+#body .upiInput{
+border-radius: 8.756px;
+border: 1.5px solid #D9D9D9;
+background: #FFF;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+#body .number{
+    background: #008CFF;
+    color: white;
+    font-weight: 500;
+    border-radius: 50%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#body .grey{
+    color: #7A7A7A !important;
+}
+
+#body .paymentBtn{
+    border-radius: 5.312px;
+background: #92278F;
+width: 100%;
+color: white;
+padding: 14px 92px;
+font-weight: 700;
+ 
+
+}
+
+
+#body .blue_hide{
+    color: #008CFF !important;
+}
+
+
+
+
+
+
+
+#body .middle_logo{
+    width: 120px ;
+    height: 40px;
+}
+
+#body .accordion-button{
+    background: white;
+    border-radius: 0px 0px 5.738px 5.738px;
+border: 1.434px solid rgba(221, 231, 241, 0.50);
+color: #008CFF;
+}
+
+
+#body .rightInner{
+    border-top-left-radius: 5.738px;
+    border-top-right-radius: 5.738px;
+border: 1.434px solid rgba(221, 231, 241, 0.80);
+background: #F6F9FF;
+box-shadow: 0px 0px 14.344px 0px rgba(0, 0, 0, 0.10);
+}
+
+#body .accordion-item {
+    border-radius: 0 !important;
+}
+
+
+#body .kids{
+    color: #2C9922 !important;
+}
+
+#body .bagni{
+    color: #93288E !important;
+}
+#collapseOne {
+    border-radius: 5.738px;
+background: #FFF;
+box-shadow: 0px 0px 15.778px 2.869px rgba(0, 0, 0, 0.08);
+}
+
+#body .totalPrice{
+    color: #93288E !important;
+    font-size: 23px;
+}
+#body .fare{
+    font-size: 23px;
+}
+
+#body .inner{
+    background: #F6F9FF;
+}
+
+
+#body .outer{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+
+@media (max-width: 1199px) {
+    #body .tab-content{
+        max-width: 360px;
+    }
+    
+    #body .paymentBtn{
+        padding: 10px 42px;
+    }
+    
+    #body .imgOuter img{
+        height: 32.841px;
+        padding: 8.879px 9.513px;
+        }
+    
+        #body .middle_logo{
+            width: 50px;
+        }
+       
+    }
+
+
+
+    @media (max-width: 1320px) {
+
+        #body .outer{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    @media (max-width: 991px) {
+
+        #body .tab-content {
+            max-width: 100% !important ;
+        }
+    }
+
+
+    @media (max-width: 660px) {
+        #body .tab-content{
+            display: none;
+        }
+
+        #body .leftDiv .nav,.nav-link{
+            width: 100% !important;
+            
+        }
+        #body .leftDiv {
+            height: 100% !important;
+            
+        }
+    }
+
+
+    @media (max-width: 361px) {
+#body .textSize{
+    font-size:20px ;
+}
+    }
